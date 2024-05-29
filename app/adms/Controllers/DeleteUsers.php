@@ -27,7 +27,6 @@ class DeleteUsers
         header("Location: $urlRedirect");
 
 
-        //
 
     }
 }

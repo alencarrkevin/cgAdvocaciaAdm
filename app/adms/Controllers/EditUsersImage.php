@@ -4,7 +4,7 @@ namespace App\adms\Controllers;
 
 /**
  * Controller da página editar imagem do usuário
- * @author Cesar <cesar@celke.com.br>
+ * @author Kevin <kevinalenvcar2019@gmail.com>
  */
 class EditUsersImage
 {
@@ -74,7 +74,6 @@ class EditUsersImage
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Usuário não encontrado!</p>";
             $urlRedirect = URLADM . "list-users/index";
             header("Location: $urlRedirect");
-             
         }
     }
 }

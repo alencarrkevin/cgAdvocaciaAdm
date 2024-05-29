@@ -89,13 +89,15 @@ class CarregarPgAdm
     private function pgPrivate():void
     {
         $this->listPgPrivate = ["Dashboard", "ListUsers", "ViewUsers",
-    "AddUsers", "EditUsers", "EditUsersPassword", "EditUsersImage", "DeleteUsers"];
+    "AddUsers", "EditUsers", "EditUsersPassword", "EditUsersImage", "DeleteUsers",
+    "ViewProfile","EditProfile", "EditProfilePassword" ];
         if(in_array($this->urlController, $this->listPgPrivate)){
             $this->verifyLogin();
         }else{
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Página não encontrada!</p>";
             $urlRedirect = URLADM . "login/index";
             header("Location: $urlRedirect");
+            
         }
     }
 

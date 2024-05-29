@@ -3,6 +3,7 @@
 namespace App\adms\Models;
 
 use App\adms\Models\helper\AdmsConn;
+use LDAP\Result;
 use PDO;
 
 /**
@@ -74,6 +75,7 @@ class AdmsConfEmail extends AdmsConn
         } else {
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Necessário confirmar o e-mail, solicite novo link <a href='".URLADM."new-conf-email/index'>Clique aqui</a>!</p>";
             $this->result = false;
+            
         }
     }
 }

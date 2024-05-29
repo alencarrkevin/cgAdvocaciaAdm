@@ -37,6 +37,7 @@ class AdmsSendEmail
     function getResult(): bool
     {
         return $this->result;
+        
     }
 
     /**
