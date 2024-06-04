@@ -93,6 +93,9 @@ if (formNewUser) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha deve ter pelo menos uma letra!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
 }
@@ -117,6 +120,9 @@ if (formLogin) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo senha!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
 }
@@ -130,6 +136,9 @@ if (formNewConfEmail) {
         if (email === "") {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo e-mail!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
             return;
         }
 
@@ -146,6 +155,9 @@ if (formRecoverPass) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo e-mail!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
 
     });
@@ -160,6 +172,9 @@ if (formUpdatePass) {
         if (email === "") {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo senha!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
             return;
         }
 
@@ -230,6 +245,9 @@ if (formAddUser) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha deve ter pelo menos uma letra!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
 }
@@ -271,6 +289,9 @@ if (formEditUser) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo situação!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
 }
@@ -304,6 +325,9 @@ if (formEditUserPass) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha deve ter pelo menos uma letra!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
 }
@@ -336,6 +360,117 @@ if (formEditProfile) {
             e.preventDefault();
             document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo usuário!</p>";
             return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
         }
     });
+}
+
+const formEditProfPass = document.getElementById("form-edit-prof-pass");
+if (formEditProfPass) {
+    formEditProfPass.addEventListener("submit", async(e) => {
+        //validar a senha do campo editar usuario
+        //Receber o valor do campo
+        var password = document.querySelector("#password").value;
+        // Verificar se o campo esta vazio
+        if (password === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo senha!</p>";
+            return;
+        }
+        // Verificar se o campo senha possui 6 caracteres
+        if (password.length < 6) {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha deve ter no mínimo 6 caracteres!</p>";
+            return;
+        }
+        // Verificar se o campo senha não possui números repetidos
+        if (password.match(/([1-9]+)\1{1,}/)) {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha não deve ter número repetido!</p>";
+            return;
+        }
+        // Verificar se o campo senha possui letras
+        if (!password.match(/[A-Za-z]/)) {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: A senha deve ter pelo menos uma letra!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
+        //document.getElementById('msg').innerHTML = "<<p>vc está</p>"
+        //validação via js para o formulario
+        //validar o formulario 
+        //validar o formulario de editar senha 
+        }
+    });
+}
+
+const formEditUserImg = document.getElementById("form-edit-user-img");
+if (formEditUserImg) {
+    formEditUserImg.addEventListener("submit", async(e) => {
+        //Receber o valor do campo
+        var new_image = document.querySelector("#new_image").value;
+        // Verificar se o campo esta vazio
+        if (new_image === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário selecionar uma imagem!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
+        }
+    });
+}
+
+const formEditProfImg = document.getElementById("form-edit-prof-img");
+if (formEditProfImg) {
+    formEditProfImg.addEventListener("submit", async(e) => {
+        //Receber o valor do campo
+        var new_image = document.querySelector("#new_image").value;
+        // Verificar se o campo esta vazio
+        if (new_image === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário selecionar uma imagem!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
+        }
+    });
+}
+
+function inputFileValImg() {
+    //Receber o valor do campo
+    var new_image = document.querySelector("#new_image");
+
+    var filePath = new_image.value;
+
+    var allowedExtensions = /(\.jpg|\.jpeg|\.png)$/i;
+
+    if (!allowedExtensions.exec(filePath)) {
+        new_image.value = '';
+        document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário selecionar uma imagem JPG ou PNG!</p>";
+        return;
+    } else {
+        previewImage(new_image);
+        document.getElementById("msg").innerHTML = "<p></p>";
+        return;
+    }
+}
+
+function previewImage(new_image) {
+    if ((new_image.files) && (new_image.files[0])) {
+        // FileReader() - ler o conteúdo dos arquivos
+        var reader = new FileReader();
+        // onload - disparar um evento quando qualquer elemento tenha sido carregado
+        reader.onload = function(e) {
+            document.getElementById('preview-img').innerHTML = "<img src='" + e.target.result + "' alt='Imagem' style='width: 100px;'>";
+        }
+    }
+
+    // readAsDataURL - Retorna os dados do formato blob como uma URL de dados - Blob representa um arquivo
+    reader.readAsDataURL(new_image.files[0]);
+    
 }

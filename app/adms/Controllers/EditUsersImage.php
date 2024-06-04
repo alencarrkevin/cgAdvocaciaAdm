@@ -2,9 +2,15 @@
 
 namespace App\adms\Controllers;
 
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
+
 /**
  * Controller da página editar imagem do usuário
- * @author Kevin <kevinalenvcar2019@gmail.com>
+ * @author Cesar <cesar@celke.com.br>
  */
 class EditUsersImage
 {
@@ -32,7 +38,7 @@ class EditUsersImage
 
         if ((!empty($id)) and (empty($this->dataForm['SendEditUserImage']))) {
             $this->id = (int) $id;
-            $viewUser = new \App\adms\Models\AdmsEditUsers();
+            $viewUser = new \App\adms\Models\AdmsEditUsersImage();
             $viewUser->viewUser($this->id);
             if ($viewUser->getResult()) {
                 $this->data['form'] = $viewUser->getResultBd();

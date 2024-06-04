@@ -2,6 +2,12 @@
 
 namespace App\adms\Models;
 
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
+
 /**
  * Apagar o imagem  do usuario no banco de dados
  *

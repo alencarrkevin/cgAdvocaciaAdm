@@ -1,6 +1,10 @@
 <?php
 
 namespace Core;
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+}
 
 /**
  * Verificar se existe a classe
@@ -90,7 +94,7 @@ class CarregarPgAdm
     {
         $this->listPgPrivate = ["Dashboard", "ListUsers", "ViewUsers",
     "AddUsers", "EditUsers", "EditUsersPassword", "EditUsersImage", "DeleteUsers",
-    "ViewProfile","EditProfile", "EditProfilePassword" ];
+    "ViewProfile","EditProfile", "EditProfilePassword", "EditProfileImage" ];
         if(in_array($this->urlController, $this->listPgPrivate)){
             $this->verifyLogin();
         }else{

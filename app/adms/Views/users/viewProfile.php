@@ -1,11 +1,15 @@
 <?php
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+}
 
 echo "<h2>Perfil</h2>";
 
 if (!empty($this->data['viewProfile'])) {
     echo "<a href='" . URLADM . "edit-profile/index'>Editar</a><br>";
     echo "<a href='" . URLADM . "edit-profile-password/index'>Editar Senha</a><br>";
-
+    echo "<a href='" . URLADM . "edit-profile-image/index'>Editar Imagem</a><br>";
 }
 
 if (isset($_SESSION['msg'])) {

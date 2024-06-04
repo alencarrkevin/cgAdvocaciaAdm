@@ -5,7 +5,17 @@ namespace App\adms\Controllers;
 /**
  * Controller da página listar usuarios
  * @author Kevin <kevinalencar2019@gmail.com>
+ * 
+ * 
  */
+
+
+
+ if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
 class ListUsers
 {
     /** @var array|string|null $data Recebe os dados que devem ser enviados para VIEW */

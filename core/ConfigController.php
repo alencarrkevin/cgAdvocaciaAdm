@@ -1,6 +1,10 @@
 <?php
 
 namespace Core;
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+}
 
 /**
  * Recebe a URL e manipula

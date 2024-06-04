@@ -2,9 +2,15 @@
 
 namespace App\adms\Controllers;
 
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
+
 /**
- * Controller da página editar senha perfil
- * @author Cesar <cesar@celke.com.br>
+ * Controller da página editar senha do perfil
+ * @author Kevin <kevinalencar2019@gmail.com>
  */
 class EditProfilePassword
 {
@@ -70,6 +76,7 @@ class EditProfilePassword
             $_SESSION['msg'] = "<p style='color: #f00;'>Erro: Perfil não encontrado!</p>";
             $urlRedirect = URLADM . "login/index";
             header("Location: $urlRedirect");
+        
         }
     }
 }

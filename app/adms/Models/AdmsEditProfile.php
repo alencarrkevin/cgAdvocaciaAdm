@@ -1,6 +1,11 @@
 <?php
 
 namespace App\adms\Models;
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
 
 /**
  * Editar o perfil do usuario

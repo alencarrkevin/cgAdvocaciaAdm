@@ -2,6 +2,12 @@
 
 namespace App\adms\Controllers;
 
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
+
 /**
  * Controller da página editar usuário
  * @author Cesar <cesar@celke.com.br>

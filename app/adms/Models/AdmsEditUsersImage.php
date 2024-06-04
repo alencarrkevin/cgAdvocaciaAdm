@@ -2,6 +2,12 @@
 
 namespace App\adms\Models;
 
+if(!defined('C8L6K7E')){
+    header("Location: /");
+   die ("ERRO: Pagina não encontrada!<br>");
+
+}
+
 use Exception;
 
 /**
@@ -35,7 +41,6 @@ class AdmsEditUsersImage
 
     /** @var string $nameImg Recebe o slug/nome da imagem */
     private string $nameImg;
-
 
     /**
      * @return bool Retorna true quando executar o processo com sucesso e false quando houver erro
@@ -110,7 +115,6 @@ class AdmsEditUsersImage
         $valExtImg = new \App\adms\Models\helper\AdmsValExtImg();
         $valExtImg->validateExtImg($this->dataImagem['type']);
         if (($this->viewUser($this->data['id'])) and ($valExtImg->getResult())) {
-            $this->result = false;
             $this->upload();
         } else {
             $this->result = false;
@@ -134,7 +138,6 @@ class AdmsEditUsersImage
             $this->edit();
         }else{
             $this->result = false;
-            
         }
     }
 
@@ -162,8 +165,8 @@ class AdmsEditUsersImage
                 unlink($this->delImg);
             }
         }
+
         $_SESSION['msg'] = "<p style='color: green;'>Imagem editada com sucesso!</p>";
-        //$_SESSION['msg'] = "<p style='color: green;'>Imagem editada com sucesso!</p>";
         $this->result = true;
     }
 }
