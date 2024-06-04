@@ -12,6 +12,7 @@ if (isset($this->data['form'])) {
 //echo password_hash("123456a", PASSWORD_DEFAULT);
 ?>
 
+
 <h1>Área Restrita</h1>
 
 <?php
@@ -45,6 +46,8 @@ if(isset($_SESSION['msg'])){
 </form>
 <p><a href="<?php echo URLADM; ?>new-user/index">Cadastrar</a> -  <a href="<?php echo URLADM; 
 ?>recover-password/index">Esqueceu a senha?</a></p>
+
+
 
 Usuário: kevinalencar2019@gmail.com<br>
 Senha: 123456a

@@ -13,8 +13,7 @@ if(!defined('C8L6K7E')){
     <head>
         <meta charset="UTF-8">
         <title>CG - ADVOCACIA</title>
-        <link rel="shortcut icon" href="<?php echo URLADM; ?>app/adms/assets/image/icon/favicon.ico">
-       <!--  <link rel"shortcut icon" href="<?php echo URLADM; ?>app/adms/assets/image/icon/favicon.icon"> -->
         
+        <link rel="shortcut icon" href="<?php echo URLADM; ?>app/adms/assets/image/icon/favicon.ico">        
     </head>
     <body>

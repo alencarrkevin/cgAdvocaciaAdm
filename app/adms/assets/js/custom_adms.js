@@ -471,6 +471,31 @@ function previewImage(new_image) {
     }
 
     // readAsDataURL - Retorna os dados do formato blob como uma URL de dados - Blob representa um arquivo
-    reader.readAsDataURL(new_image.files[0]);
-    
+    reader.readAsDataURL(new_image.files[0]);  
+}
+
+const formEditSitUser = document.getElementById("form-add-sit-user");
+if (formEditSitUser) {
+    formEditSitUser.addEventListener("submit", async(e) => {
+        //Receber o valor do campo
+        var name = document.querySelector("#name").value;
+        // Verificar se o campo esta vazio
+        if (name === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo nome!</p>";
+            return;
+        }
+
+        //Receber o valor do campo
+        var adms_color_id = document.querySelector("#adms_color_id").value;
+        // Verificar se o campo esta vazio
+        if (adms_color_id === "") {
+            e.preventDefault();
+            document.getElementById("msg").innerHTML = "<p style='color: #f00;'>Erro: Necessário preencher o campo Cor!</p>";
+            return;
+        } else {
+            document.getElementById("msg").innerHTML = "<p></p>";
+            return;
+        }
+    });
 }

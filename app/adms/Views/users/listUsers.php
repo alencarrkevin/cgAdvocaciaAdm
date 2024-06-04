@@ -24,5 +24,6 @@ foreach($this->data['listUsers'] as $user){
    echo "<a href='" . URLADM . "edit-users/index/$id'>Editar</a><br>";
    echo "<a href='" . URLADM . "delete-users/index/$id'>Apagar</a><br>";
     echo "<hr>";
+    //crud listar usuarios
 
 }
